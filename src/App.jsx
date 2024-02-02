@@ -1,14 +1,18 @@
 // DO NOT DELETE
 
 import './App.css'
+import Header from './Header';
+import Description from './Description';
+import { useState } from 'react';
+import DogListContainer from './DogListContainer';
 
-/**
- * @type {() => JSX.Element}
- */
 export const App = () => {
+  const [dogUrl, setDogUrl] = useState('https://images.dog.ceo/breeds/spaniel-brittany/n02101388_6057.jpg');
   return (
     <div>
-      <h2>Hello, world!</h2>
+      <Header></Header>
+      <Description url={dogUrl} setDogUrl={setDogUrl}></Description>
+      <DogListContainer></DogListContainer>
     </div>
   )
 }
